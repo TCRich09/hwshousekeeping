@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title>HWSHousekeeping</title>
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+    <link href="css/templatemo_style.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.min.js" type="text/javascript">
+    </script>
+    <script src="js/jquery.scrollTo-min.js" type="text/javascript">
+    </script>
+    <script src="js/jquery.localscroll-min.js" type="text/javascript">
+    </script>
+    <script src="js/init.js" type="text/javascript">
+    </script>
+    <link href="css/slimbox2.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="js/slimbox2.js" type="text/JavaScript">
+    </script>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+body {
+	margin-top: 0px;
+}
+</style>
+    </head>
+    <body>
+<?php if(isset($response)) { echo $response; } ?>
+<!-- Start of the login/register page -->
+<div id="templatemo_main_wrapper">
+      <div id="templatemo_header_wrapper">
+    <div id="templatemo_header">
+          <div id="site_title"> <a href="#">All in one place!</a> </div>
+          <p id="intro_text">A site created for housekeeping. Making it easier to complete the day to day duties by having everything all in one place.</p>
+        </div>
+  </div>
+      <?php echo password_hash( "SecretPassword", PASSWORD_BCRYPT); ?>
+      <div id="templatemo_main">
+    <div id="content">
+    <div class="section" id="login_form">
+    	<div class="half left">
+    		  <h1>LOGIN</h1>
+    		  <form name="login" action="login.php" method="POST">
+			<label for="useremail">Email:</label>
+    		<input class="required input_field" id="useremail" name="useremail" type="text" />
+    		<div class="cleaner h10"></div>
+   			<label for="username">Username:</label>
+    		<input class="required input_field" id="Username" name="username" type="text" />
+    		<div class="cleaner h10"></div>
+    		<label for="password">Password:</label>
+    		<input class="required input_field" id="Password" name="pass" type="password" />
+    		<div class="cleaner h10"></div>
+    		<input class="login_btn left" id="login" name="login" type="submit" value="Login" />
+			  </form>
+     	</div>
+        <div class="half right">
+              <h1>REGISTER</h1>
+              <form action="#" id="register_form form" method="post" name="register">
+            <label for="fname">First Name:</label>
+            <input class="required input_field" id="FirstName" name="fname" />
+            <div class="cleaner h10"></div>
+            <label for="lname">Last Name:</label>
+            <input class="required input_field" id="LastName" name="lname" />
+            <div class="cleaner h10"></div>
+            <label for="email">Email:</label>
+            <input class="required input_field" id="FromEmailAddress" name="email" type="text" />
+            <div class="cleaner h10"></div>
+            <label for="username">Username:</label>
+            <input class="required input_field" id="Uname" name="username" type="text" />
+            <div class="cleaner h10"></div>
+            <label for="password">Password:</label>
+            <input class="required input_field" id="Pword" name="pass" type="password" />
+            <div class="cleaner h10"></div>
+            <input class="login_btn left" id="register" name="register" type="submit" value="Register" />
+          </form>
+            </div>
+        <a class="home_btn" href="#home">home</a> </div>
+          <!-- Start of the home page -->
+          <?php session_start(); ?>
+          <?php if(!isset($_SESSION[ 'username'])) { header( 'Location: login.php'); } ?>
+          <div class="section" id="home">
+        <ul id="templatemo_menu">
+              <li><a class="uptodate" href="#uptodate"><span>Up to date</span></a> </li>
+              <li><a class="resources" href="#resources"><span>Resources</span></a> </li>
+              <li><a class="team_members" href="#team_members"><span>Team Members</span></a> </li>
+              <li><a class="management" href="#management"><span>Management</span></a> </li>
+              <li class="no_margin_right"><a class="contact" href="#contact"><span>Contact</span></a> </li>
+            </ul>
+      </div>
+          <!-- Start of the up to date page -->
+          <?php session_start(); ?>
+          <?php if(!isset($_SESSION[ 'username'])) { header( 'Location: login.php'); } ?>
+          <div class="section" id="uptodate">
+        <h1>Information to keep you up to date!</h1>
+        <div class="half left">
+              <div class="img_border img_fl"><img alt="Image 02" src="images/templatemo_image_3.jpg" /> </div>
+              <p><em></em> </p>
+              <p>This page is to keep you updated on important information in housekeeping.</p>
+              <strong>
+          <p>Information like:</p>
+          </strong>
+              <ul class="list_bullet">
+            <li>Who is leading the incentive program this month?</li>
+            <li>Did my vacation request get approved?</li>
+            <li>And other fun facts!</li>
+          </ul>
+            </div>
+        <div class="half right">
+              <p>Information will be displayed here.</p>
+            </div>
+        <a class="home_btn" href="#home">home</a> <a class="page_nav_btn previous" href="#home">Previous</a> <a class="page_nav_btn next" href="#resources">Next</a> </div>
+          <!-- Start of the resources page -->
+          <?php session_start(); ?>
+          <?php if(!isset($_SESSION[ 'username'])) { header( 'Location: login.php'); } ?>
+          <div class="section" id="resources">
+        <h1>Resources</h1>
+        <div class="half left">
+              <p><em>Here are a few forms and resources. This list is updated frequently. If there is a form you would like to see, please fill out the contact form with your name, email address, and the form you'd like to see.</em> </p>
+              <ul class="list_bullet">
+            <li>Vacation Request</li>
+            <li>Time Sheet</li>
+            <li>Employment Application (English)</li>
+            <li>Solicitud de Empleo (Espa�ol)</li>
+            <li>Open Position (Housekeeping)</li>
+            <li>Housekeeping Schedule</li>
+            <li>Weekly Inspection Scores</li>
+          </ul>
+            </div>
+        <div class="half right">
+              <p><em>Click on the form you need from the choices available below.</em> </p>
+              <ul id="templatemo_menu2">
+            <li class="no_margin_right"><a class="schedule" href="http://hwshousekeeping.com/documents/May_2017_Schedule.pdf">Schedule</a> </li>
+            <li class="no_margin_right"><a class="vacation_request" href="http://hwshousekeeping.com/documents/Vacation_Request.pdf">Vacation Request</a> </li>
+            <li class="no_margin_right"><a class="time_sheets" href="http://hwshousekeeping.com/documents/Time_Sheet.pdf">Time Sheet</a> </li>
+            <li class="no_margin_right"><a class="apply_eng" href="http://hwshousekeeping.com/documents/Employment Application-English.pdf">Application-Eng</a> </li>
+          </ul>
+            </div>
+        <p><a class="home_btn" href="#home">home</a> </p>
+        <p><a class="page_nav_btn previous" href="#uptodate">Previous</a> <a class="page_nav_btn next" href="#team_members">Next</a> </p>
+      </div>
+          <!-- Start of the team members page. -->
+          <?php session_start(); ?>
+          <?php if(!isset($_SESSION[ 'username'])) { header( 'Location: login.php'); } ?>
+          <div class="section" id="team_members">
+        <h1>Team Members</h1>
+        <div class="half left">
+              <p><em>Designed for the housekeeping team members. The Room Atendants, the Laundry Attendants, and the houseperson's.</em> </p>
+              <ul class="list_bullet">
+            <li>Room Attendants Daily Assignment</li>
+            <li>Room Attendants individualy inspection scores</li>
+            <li>A.M. Houseperson Checklist</li>
+            <li>P.M. Houseperson Checklist</li>
+            <li>Property Walk Checklist</li>
+            <li>Each team member will have thier own folder with their documents</li>
+          </ul>
+            </div>
+        <div class="half right">
+              <p><em>Click on the form you need from the choices available below.</em> </p>
+              <ul id="templatemo_menu3">
+            <li class="no_margin_right"><a class="AMHouseperson" href="http://hwshousekeeping.com/documents/AMHouseperson.pdf">AM Houseperson</a> </li>
+            <li class="no_margin_right"><a class="PMHouseperson" href="http://hwshousekeeping.com/documents/PMHouseperson.pdf">PM Houseperson</a> </li>
+            <li class="no_margin_right"><a class="GraveHouseperson" href="http://hwshousekeeping.com/documents/GraveHouseperson.pdf">GY Houseperson</a> </li>
+          </ul>
+            </div>
+        <a class="home_btn" href="#home">home</a> <a class="page_nav_btn previous" href="#resources">Previous</a> <a class="page_nav_btn next" href="#management">Next</a> </div>
+          <!-- Start of management page. -->
+          <?php session_start(); ?>
+          <?php if(!isset($_SESSION[ 'username'])) { header( 'Location: login.php'); } ?>
+          <div class="section" id="management">
+        <h1>Management</h1>
+        <div class="half left">
+              <p><em>Here you will find the daily documents used by housekeeping supervisors and management.</em> </p>
+              <ul class="list_bullet">
+            <li>Housekeeping Daily Report</li>
+            <li>Rooming List</li>
+            <li>Housekeeping Schedule</li>
+            <li>Checkbook</li>
+            <li>Coded Invoices (Current Month)</li>
+            <li>Calendar</li>
+            <li>Inpection Form</li>
+            <li>Incentive Tracker</li>
+          </ul>
+            </div>
+        <div class="half right">
+              <p><em>Click on the form you need from the choices available below.</em> </p>
+              <ul id="templatemo_menu4">
+            <li class="no_margin_right"><a class="InspectionSheet" href="http://hwshousekeeping.com/documents/Inspection_Sheet.pdf">Inspection Form</a> </li>
+          </ul>
+            </div>
+        <a class="home_btn" href="#home">home</a> <a class="page_nav_btn previous" href="#team_members">Previous</a> <a class="page_nav_btn next" href="#contact">Next</a> </div>
+          <?php session_start(); ?>
+          <?php if(!isset($_SESSION[ 'username'])) { header( 'Location: login.php'); } ?>
+          <div class="section" id="contact">
+        <h1>Contact Information</h1>
+        <div class="half left">
+              <h4>HWSHousekeeping</h4>
+              <strong>Phone:</strong> 425.670.8943 <br />
+              <strong>Email:</strong> <a href="mailto:support@hwshousekeeping.com">support@hwshousekeeping.com</a> <br />
+              <div class="clear h20"></div>
+            </div>
+        <div class="half right">
+              <h4>Quick Contact Form</h4>
+              <p>Have questions? Need help? Give us a call or simply fill out the contact form and we will get back to as soon as possible.</p>
+              <div id="contact_form">
+            <form action="#" id="contact_form_submit" method="post" name="contact">
+                  <div class="col_175 left">
+                <label for="author">Name:</label>
+                <input class="required input_field" id="author" name="author" type="text" />
+                <div class="cleaner h10"></div>
+              </div>
+                  <div class="col_175 right">
+                <label for="email">Email:</label>
+                <input class="validate-email required input_field" id="email" name="email" type="text" />
+                <div class="cleaner h10"></div>
+              </div>
+                  <label for="text">Message:</label>
+                  <textarea class="required" cols="0" id="text" name="text" rows="0"></textarea>
+                  <div class="cleaner h10"></div>
+                  <input class="submit_btn left" id="submit" name="submit" type="submit" value="Send" />
+                  <input class="submit_btn right" id="reset" name="reset" type="reset" value="Reset" />
+                </form>
+            <a class="home_btn" href="#home">home</a> <a class="page_nav_btn previous" href="#management">Previous</a> <a class="page_nav_btn next" href="#home">Next</a> </div>
+            </div>
+      </div>
+        </div>
+  </div>
+      <div id="templatemo_footer_wrapper">
+    <div id="templatemo_footer">
+          <p>Copyright© 2016 Empire Clean Team, LLC</p>
+        </div>
+  </div>
+    </div>
+<script type="text/javascript" async="async" defer="defer" data-cfasync="false" src="https://mylivechat.com/chatinline.aspx?hccid=26401802"></script>
+</body>
+</html>
